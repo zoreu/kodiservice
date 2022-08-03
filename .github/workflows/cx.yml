@@ -24,7 +24,7 @@ jobs:
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run script and deploy
-      run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git config --global push.default "matching" && git clone -b output "https://${{ secrets.REPOKEY }}@github.com/zoreu/kodiservice.git" output && python cx.py && git add cx.json && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin output
+      run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git config --global push.default "matching" && git clone -b output "https://${{ secrets.REPOKEY }}@github.com/zoreu/kodiservice.git" backup && python cx.py && git add cx.json && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin output
 
 
 
