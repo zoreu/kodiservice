@@ -5,5 +5,5 @@
 # except:
 #   pass
 # jsonfile = os.path.join('build','cx.json')
-with open('cx.json, 'w') as f:
+with open('cx.json', 'w') as f:
   f.write('teste')
