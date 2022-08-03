@@ -1,7 +1,9 @@
 #test deploy
+import os
 try:
   os.mkdir('build')
 except:
   pass
-with open('build/cx.json', 'w') as f:
+jsonfile = os.path.join('build','cx.json')
+with open(jsonfile, 'w') as f:
   f.write('teste')
