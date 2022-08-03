@@ -23,7 +23,7 @@ jobs:
         pip install beautifulsoup4
         pip install requests
     - name: run script and deploy
-      run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git config --global push.default "matching" && git clone "https://${{ secrets.REPOKEY }}@github.com/zoreu/kodiservice.git" && cd kodiservice && python cx.py && git add cx.json && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin output
+      run: git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git config --global push.default "matching" && git clone "https://${{ secrets.REPOKEY }}@github.com/zoreu/kodiservice.git" && cd kodiservice && git checkout output && git pull origin output && python cx.py && git add cx.json && git commit -m "Publishing revision $(git --git-dir ../.git rev-parse --short HEAD)" && git push --force origin output
 
 
 
